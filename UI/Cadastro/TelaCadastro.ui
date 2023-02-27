@@ -66,6 +66,144 @@ background-color:transparent;
         <number>0</number>
        </property>
        <item>
+        <widget class="QWidget" name="areaCadastro" native="true">
+         <property name="styleSheet">
+          <string notr="true">#areaCadastro{
+	border-top-left-radius :10px;
+	border-bottom-left-radius :10px;
+	background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:1, y2:0, stop:0 rgba(94, 119, 255, 255), stop:1 rgba(79, 255, 149, 255));
+}</string>
+         </property>
+         <widget class="QFrame" name="Elipse">
+          <property name="geometry">
+           <rect>
+            <x>440</x>
+            <y>-50</y>
+            <width>120</width>
+            <height>601</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-image: url(:/Elipse/Ellipse.png);
+background-repeat:norepeat;
+background-position:center;</string>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+         </widget>
+         <widget class="QFrame" name="frame_2">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>170</y>
+            <width>441</width>
+            <height>171</height>
+           </rect>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <item>
+            <widget class="QLabel" name="labelBemVindo">
+             <property name="styleSheet">
+              <string notr="true">font-family: Roboto;
+font-size: 40px;
+font-weight: 600;
+line-height: 47px;
+letter-spacing: 0em;
+text-align: left;
+color:#FFFFFF;
+</string>
+             </property>
+             <property name="text">
+              <string>Bem-Vindo de Volta</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="LabeNaoCadastrado">
+             <property name="styleSheet">
+              <string notr="true">font-family: Roboto;
+font-size: 20px;
+font-weight: 400;
+line-height: 23px;
+letter-spacing: 0em;
+text-align: left;
+color:#ffffff;</string>
+             </property>
+             <property name="text">
+              <string>Entre em sua conta</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QFrame" name="frame_3">
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_3">
+              <item>
+               <widget class="QPushButton" name="btnEntrar">
+                <property name="minimumSize">
+                 <size>
+                  <width>126</width>
+                  <height>43</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>126</width>
+                  <height>43</height>
+                 </size>
+                </property>
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton{
+font-family: Roboto;
+font-size: 20px;
+font-weight: 400;
+line-height: 23px;
+letter-spacing: 0em;
+color:#ffffff;
+border:1px solid #FFFFFF;
+border-radius:21px;
+}
+QPushButton:hover{
+background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:1, y2:0, stop:0 rgba(94, 119, 255, 255), stop:1 rgba(79, 255, 149, 255));
+}</string>
+                </property>
+                <property name="text">
+                 <string>Entrar</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+       <item>
         <widget class="QWidget" name="areaLogin" native="true">
          <property name="minimumSize">
           <size>
@@ -81,20 +219,20 @@ background-color:transparent;
          </property>
          <property name="styleSheet">
           <string notr="true">#areaLogin{
-	border-top-left-radius :10px;
-	border-bottom-left-radius :10px;
+	border-top-right-radius :10px;
+	border-bottom-right-radius :10px;
 	background-color: rgb(255, 255, 255);
 }</string>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_5">
-          <property name="leftMargin">
+          <property name="topMargin">
+           <number>40</number>
+          </property>
+          <property name="rightMargin">
            <number>52</number>
           </property>
-          <property name="topMargin">
-           <number>60</number>
-          </property>
           <property name="bottomMargin">
-           <number>60</number>
+           <number>40</number>
           </property>
           <item>
            <widget class="QFrame" name="frame_5">
@@ -106,7 +244,7 @@ background-color:transparent;
             </property>
             <layout class="QHBoxLayout" name="horizontalLayout_4">
              <item>
-              <widget class="QLabel" name="labelEntrar">
+              <widget class="QLabel" name="labelCadastro">
                <property name="styleSheet">
                 <string notr="true">font-family: Roboto;
 font-size: 40px;
@@ -117,7 +255,7 @@ text-align: left;
 color:#343434;</string>
                </property>
                <property name="text">
-                <string>Entrar</string>
+                <string>Cadastro</string>
                </property>
               </widget>
              </item>
@@ -221,6 +359,9 @@ QLineEdit:focus{
           </item>
           <item>
            <widget class="QFrame" name="frame_4">
+            <property name="toolTipDuration">
+             <number>-8</number>
+            </property>
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
             </property>
@@ -228,6 +369,9 @@ QLineEdit:focus{
              <enum>QFrame::Raised</enum>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_3">
+             <property name="spacing">
+              <number>9</number>
+             </property>
              <item>
               <widget class="QLabel" name="LabelSenha">
                <property name="styleSheet">
@@ -281,6 +425,43 @@ QLineEdit:focus{
                </property>
               </widget>
              </item>
+             <item>
+              <widget class="QLineEdit" name="inputConfirmSenha">
+               <property name="minimumSize">
+                <size>
+                 <width>394</width>
+                 <height>45</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>394</width>
+                 <height>45</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QLineEdit{
+	font-family: Prompt;
+	font-size: 15px;
+	font-weight: 400;
+	line-height: 23px;
+	letter-spacing: 0em;
+	text-align: left;
+	color:#8B8B8B;
+	padding: 10px;
+	background-color:#EBEBEB;
+	border:none;
+	border-radius:22px;
+}
+QLineEdit:focus{
+	border:2px solid #343434;
+}</string>
+               </property>
+               <property name="echoMode">
+                <enum>QLineEdit::Password</enum>
+               </property>
+              </widget>
+             </item>
             </layout>
            </widget>
           </item>
@@ -297,7 +478,7 @@ QLineEdit:focus{
               <number>11</number>
              </property>
              <item>
-              <widget class="QPushButton" name="btnEntrar">
+              <widget class="QPushButton" name="btnCadastro">
                <property name="minimumSize">
                 <size>
                  <width>394</width>
@@ -327,51 +508,7 @@ border:none;
 border-radius:22;</string>
                </property>
                <property name="text">
-                <string>Entrar</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QCheckBox" name="checkLembrar">
-               <property name="maximumSize">
-                <size>
-                 <width>115</width>
-                 <height>16777215</height>
-                </size>
-               </property>
-               <property name="cursor">
-                <cursorShape>PointingHandCursor</cursorShape>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">#checkLembrar{
-	font-family: Prompt;
-	font-size: 15px;
-	font-weight: 400;
-	line-height: 23px;
-	letter-spacing: 0em;
-	text-align: left;
-	color:#8B8B8B;
-	padding:3px;
-}
-#checkLembrar::indicator {
-	width: 20px;
-	height: 20px;
-	background-color:#8B8B8B;
-	border:none;
-	border-radius: 3px;
-}
-#checkLembrar::indicator:checked  {
-	background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:1, y2:0, stop:0 rgba(94, 119, 255, 255), stop:1 rgba(79, 255, 149, 255));
-	color:qlineargradient(spread:pad, x1:0, y1:1, x2:1, y2:0, stop:0 rgba(94, 119, 255, 255), stop:1 rgba(79, 255, 149, 255));
-}
-#checkLembrar:checked  {
-	color: qlineargradient(spread:pad, x1:0, y1:1, x2:1, y2:0, stop:0 rgba(94, 119, 255, 255), stop:1 rgba(79, 255, 149, 255));
-}
-	
-</string>
-               </property>
-               <property name="text">
-                <string>Lembrar-me</string>
+                <string>Cadastrar</string>
                </property>
               </widget>
              </item>
@@ -379,144 +516,6 @@ border-radius:22;</string>
            </widget>
           </item>
          </layout>
-        </widget>
-       </item>
-       <item>
-        <widget class="QWidget" name="areaCadastro" native="true">
-         <property name="styleSheet">
-          <string notr="true">#areaCadastro{
-	border-top-right-radius :10px;
-	border-bottom-right-radius :10px;
-	background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:1, y2:0, stop:0 rgba(94, 119, 255, 255), stop:1 rgba(79, 255, 149, 255));
-}</string>
-         </property>
-         <widget class="QFrame" name="Elipse">
-          <property name="geometry">
-           <rect>
-            <x>-60</x>
-            <y>-50</y>
-            <width>120</width>
-            <height>601</height>
-           </rect>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-image: url(:/Elipse/Ellipse.png);
-background-repeat:norepeat;
-background-position:center;</string>
-          </property>
-          <property name="frameShape">
-           <enum>QFrame::StyledPanel</enum>
-          </property>
-          <property name="frameShadow">
-           <enum>QFrame::Raised</enum>
-          </property>
-         </widget>
-         <widget class="QFrame" name="frame_2">
-          <property name="geometry">
-           <rect>
-            <x>50</x>
-            <y>170</y>
-            <width>441</width>
-            <height>171</height>
-           </rect>
-          </property>
-          <property name="frameShape">
-           <enum>QFrame::StyledPanel</enum>
-          </property>
-          <property name="frameShadow">
-           <enum>QFrame::Raised</enum>
-          </property>
-          <layout class="QVBoxLayout" name="verticalLayout">
-           <item>
-            <widget class="QLabel" name="labelBemVindo">
-             <property name="styleSheet">
-              <string notr="true">font-family: Roboto;
-font-size: 40px;
-font-weight: 600;
-line-height: 47px;
-letter-spacing: 0em;
-text-align: left;
-color:#FFFFFF;
-</string>
-             </property>
-             <property name="text">
-              <string>Bem-Vindo ao Login</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="LabeNaoCadastrado">
-             <property name="styleSheet">
-              <string notr="true">font-family: Roboto;
-font-size: 20px;
-font-weight: 400;
-line-height: 23px;
-letter-spacing: 0em;
-text-align: left;
-color:#ffffff;</string>
-             </property>
-             <property name="text">
-              <string>Não possui uma conta?</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QFrame" name="frame_3">
-             <property name="frameShape">
-              <enum>QFrame::StyledPanel</enum>
-             </property>
-             <property name="frameShadow">
-              <enum>QFrame::Raised</enum>
-             </property>
-             <layout class="QHBoxLayout" name="horizontalLayout_3">
-              <item>
-               <widget class="QPushButton" name="btnCadastro">
-                <property name="minimumSize">
-                 <size>
-                  <width>126</width>
-                  <height>43</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>126</width>
-                  <height>43</height>
-                 </size>
-                </property>
-                <property name="cursor">
-                 <cursorShape>PointingHandCursor</cursorShape>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">QPushButton{
-font-family: Roboto;
-font-size: 20px;
-font-weight: 400;
-line-height: 23px;
-letter-spacing: 0em;
-color:#ffffff;
-border:1px solid #FFFFFF;
-border-radius:21px;
-}
-QPushButton:hover{
-background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:1, y2:0, stop:0 rgba(94, 119, 255, 255), stop:1 rgba(79, 255, 149, 255));
-}</string>
-                </property>
-                <property name="text">
-                 <string>Cadastre-se</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </widget>
-           </item>
-          </layout>
-         </widget>
         </widget>
        </item>
       </layout>
@@ -528,9 +527,9 @@ background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:1, y2:0, stop:0 rgb
  <tabstops>
   <tabstop>inputNome</tabstop>
   <tabstop>inputSenha</tabstop>
-  <tabstop>btnEntrar</tabstop>
-  <tabstop>checkLembrar</tabstop>
+  <tabstop>inputConfirmSenha</tabstop>
   <tabstop>btnCadastro</tabstop>
+  <tabstop>btnEntrar</tabstop>
   <tabstop>btnFechar</tabstop>
  </tabstops>
  <resources>

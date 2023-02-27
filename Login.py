@@ -31,7 +31,7 @@ class Login(QMainWindow):
         
         # Funções dos Botões
         self.entrar.clicked.connect(lambda: self.Logar())
-        self.cadastro.clicked.connect(lambda: print("botao de cadastro clicado"))
+        self.cadastro.clicked.connect(lambda: self.telaCadastro())
         self.sair.clicked.connect(lambda: self.telaLogin.close())
         
         # mostrando a tela login
@@ -67,4 +67,10 @@ class Login(QMainWindow):
             print("nome não cadastrado")
             
         
-
+    def telaCadastro(self):
+        # fechando a tela Login
+        self.telaLogin.close()
+        
+        # abrindo a tela Cadastro
+        from Main import abrirJanela
+        abrirJanela(janela=2)
