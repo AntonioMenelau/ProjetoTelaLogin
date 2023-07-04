@@ -8,14 +8,18 @@
 
 
 # importando todas as bibliotecas necessarias
-from Files.CoreQt import *
+import sys
+from PyQt5 import QtCore
+from PyQt5.QtWidgets import QMainWindow, QPushButton, QLineEdit
+from PyQt5.uic import loadUi
+import Login.Login as login
 
 # GUI tela Cadastro
 class Cadastro(QMainWindow):
     def __init__(self):
         super(Cadastro, self).__init__()
         # importando a tela Login
-        self.TelaCadastro = loadUi("UI\\Cadastro\\TelaCadastro.ui", self)
+        self.TelaCadastro = loadUi(r"Login\UI\Cadastro\TelaCadastro.ui", self)
         
         # configurando a janela como translucida e tirando a moldura da aplicação 
         self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
@@ -69,9 +73,6 @@ class Cadastro(QMainWindow):
         
 
     def telaLogin(self):
-        # fechando a tela Cadastro
-        self.TelaCadastro.close()
+        self.TelaCadastro.close()   
+        login.Login()
         
-        # abrindo a tela Login
-        from Main import abrirJanela
-        abrirJanela(janela=1)        

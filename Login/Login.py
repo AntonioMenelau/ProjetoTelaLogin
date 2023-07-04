@@ -7,15 +7,22 @@
 # ---------------------------------------------------------------------------------------
 
 
-# importando todas as bibliotecas necessarias para aplicação
-from Files.CoreQt import *
+# importando todas as bibliotecas necessarias
+import sys
+from PyQt5 import QtCore
+from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QLineEdit, QCheckBox
+from PyQt5.QtCore import pyqtSignal
+from PyQt5.uic import loadUi
+import Login.Files.FilesTelaLogin
+import Login.Cadastro as cadastro
 
-# GUI Tela Login
+# GUI tela Login
 class Login(QMainWindow):
+    login_success = pyqtSignal()
     def __init__(self):
         super(Login, self).__init__()
         # importando a tela Login
-        self.telaLogin = loadUi("UI\\Login\\TelaLogin.ui", self)
+        self.telaLogin = loadUi(r"Login\UI\Login\TelaLogin.ui", self)
         
         # configurando a janela como translucida e tirando a moldura da aplicação 
         self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
@@ -36,7 +43,7 @@ class Login(QMainWindow):
         
         # mostrando a tela login
         self.telaLogin.show()
-    
+
     # função que valida se o nome ou a senha estao cadastrados
     def Logar(self):
         # conectando o banco de dados 
@@ -59,18 +66,29 @@ class Login(QMainWindow):
         if x == True:
             if y == True:
                 print("Acesso concedido")
+                self.login_success.emit()
                 self.telaLogin.close()
             else:
                 print("nome encontrado")
                 print("Acesso negado")
         else:
             print("nome não cadastrado")
-            
-        
+    
     def telaCadastro(self):
-        # fechando a tela Login
         self.telaLogin.close()
-        
-        # abrindo a tela Cadastro
-        from Main import abrirJanela
-        abrirJanela(janela=2)
+        cadastro.Cadastro()
+   
+            
+def initLogin():
+    app = QApplication(sys.argv)
+    login = Login()
+    success = [False]
+
+    def on_login_success():
+        success[0] = True
+
+    login.login_success.connect(on_login_success)
+
+    app.exec_()
+
+    return 1 if success[0] else 0
